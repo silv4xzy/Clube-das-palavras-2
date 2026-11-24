@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clube das Palavras</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fff8ed;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* CABEÇALHO */
+
+header {
+    background: linear-gradient(135deg, #ff91b5, #a78bfa, #69c9ff);
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+    border-radius: 0 0 40px 40px;
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 8px;
+}
+
+header h2 {
+    font-size: 22px;
+}
+
+header p {
+    margin: 12px 0 25px;
+    font-size: 17px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+nav a {
+    background: white;
+    color: #8b5cf6;
+    padding: 10px 17px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #fff0a8;
+    transform: translateY(-3px);
+}
+
+/* CONTEÚDO */
+
+main {
+    max-width: 1050px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+section {
+    background: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 25px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+    border-left: 8px solid #ffb6cf;
+}
+
+section h2 {
+    color: #8b5cf6;
+    margin-bottom: 18px;
+    font-size: 27px;
+}
+
+section h3 {
+    color: #ff8a65;
+    margin: 20px 0 10px;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+/* CARDS DAS HISTÓRIAS E ATIVIDADES */
+
+.card {
+    background: #fff3f7;
+    padding: 20px;
+    border-radius: 18px;
+    margin: 18px 0;
+}
+
+.card.azul {
+    background: #eaf6ff;
+}
+
+.card.verde {
+    background: #eaffed;
+}
+
+.card.amarelo {
+    background: #fff8d9;
+}
+
+.card.roxo {
+    background: #f2ebff;
+}
+
+/* OPÇÕES */
+
+label {
+    display: block;
+    background: #f7f4ff;
+    padding: 11px 15px;
+    border-radius: 12px;
+    margin: 8px 0;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+label:hover {
+    background: #e9dcff;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #9b70ef;
+}
+
+/* CAMPOS DE RESPOSTA */
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 2px solid #ded4ff;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+    margin: 8px 0 15px;
+    background: #fff;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #a78bfa;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* LISTAS */
+
+ul {
+    padding-left: 25px;
+}
+
+li {
+    margin: 8px 0;
+    font-weight: bold;
+}
+
+/* BOTÕES */
+
+button {
+    background: #a78bfa;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #8b5cf6;
+    transform: scale(1.04);
+}
+
+/* CONQUISTAS */
+
+.conquista {
+    background: #fff8d9;
+    padding: 20px;
+    border-radius: 18px;
+}
+
+footer {
+    background: #a78bfa;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 35px 35px 0 0;
+}
+
+footer a {
+    display: inline-block;
+    margin-top: 15px;
+    background: white;
+    color: #8b5cf6;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 30px;
+    }
+
+    header h2 {
+        font-size: 18px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    section h2 {
+        font-size: 22px;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 9px 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header id="inicio">
+    <h1>🌈 Clube das Palavras</h1>
+    <h2>Um mundo de letras, histórias e diversão!</h2>
+    <p>Aprender a ler e escrever pode ser uma aventura!</p>
+
+    <nav>
+        <a href="#leitura">📚 Leitura</a>
+        <a href="#silabas">🔤 Sílabas</a>
+        <a href="#escrita">✏️ Escrita</a>
+        <a href="#desafios">🧩 Desafios</a>
+        <a href="#historias">🎨 Histórias</a>
+    </nav>
+</header>
+
+<main>
+
+<section>
+    <h2>👋 Olá, pequeno leitor!</h2>
+    <div class="card amarelo">
+        <p>Seja bem-vindo ao Clube das Palavras!</p>
+        <p>Aqui você vai brincar com as letras, descobrir palavras,
+        ler histórias e praticar a escrita.</p>
+        <p><strong>💡 Faça as atividades com calma. Errar faz parte de aprender!</strong></p>
+    </div>
+</section>
+
+<section id="leitura">
+    <h2>📚 1. Cantinho da leitura</h2>
+    <p>Leia as historinhas e depois responda às perguntas.</p>
+
+    <div class="card azul">
+        <h3>🐱 O gato Mimi</h3>
+        <p>Mimi é um gatinho muito brincalhão. Ele gosta de correr
+        pelo quintal e brincar com sua bola azul. Quando fica cansado,
+        Mimi descansa em sua caminha.</p>
+    </div>
+
+    <h3>Vamos ver se você entendeu?</h3>
+
+    <div class="card">
+        <p><strong>1. Qual é o nome do gatinho?</strong></p>
+        <label><input type="radio" name="pergunta1"> Tito</label>
+        <label><input type="radio" name="pergunta1"> Mimi</label>
+        <label><input type="radio" name="pergunta1"> Bidu</label>
+    </div>
+
+    <div class="card">
+        <p><strong>2. Qual é a cor da bola?</strong></p>
+        <label><input type="radio" name="pergunta2"> Vermelha</label>
+        <label><input type="radio" name="pergunta2"> Verde</label>
+        <label><input type="radio" name="pergunta2"> Azul</label>
+    </div>
+
+    <div class="card">
+        <p><strong>3. Onde Mimi descansa?</strong></p>
+        <label><input type="radio" name="pergunta3"> Na caminha</label>
+        <label><input type="radio" name="pergunta3"> Na escola</label>
+        <label><input type="radio" name="pergunta3"> Na árvore</label>
+    </div>
+
+    <div class="card azul">
+        <h3>🐝 O passeio de Bia</h3>
+        <p>Bia foi ao parque com sua mãe. Lá, viu flores coloridas,
+        borboletas e passarinhos. Ela brincou no balanço e voltou
+        para casa muito feliz.</p>
+    </div>
+
+    <div class="card">
+        <p><strong>4. Com quem Bia foi ao parque?</strong></p>
+        <label><input type="radio" name="pergunta4"> Com seu pai</label>
+        <label><input type="radio" name="pergunta4"> Com sua mãe</label>
+        <label><input type="radio" name="pergunta4"> Com sua amiga</label>
+    </div>
+
+    <div class="card">
+        <p><strong>5. Em qual brinquedo Bia brincou?</strong></p>
+        <label><input type="radio" name="pergunta5"> Escorregador</label>
+        <label><input type="radio" name="pergunta5"> Gangorra</label>
+        <label><input type="radio" name="pergunta5"> Balanço</label>
+    </div>
+</section>
+
+<section id="silabas">
+    <h2>🔤 2. Brincando com as sílabas</h2>
+    <p>As palavras são formadas por pedacinhos chamados sílabas.
+    Leia cada pedacinho em voz alta!</p>
+
+    <div class="card amarelo">
+        <h3>🌟 Junte as sílabas</h3>
+        <ul>
+            <li>BO + LA = BOLA</li>
+            <li>CA + SA = CASA</li>
+            <li>SA + PO = SAPO</li>
+            <li>JA + NE + LA = JANELA</li>
+            <li>MA + CA + CO = MACACO</li>
+            <li>BO + NE + CA = BONECA</li>
+        </ul>
+    </div>
+
+    <h3>🎯 Qual palavra vamos formar?</h3>
+
+    <div class="card">
+        <p><strong>1. CA + DEI + RA =</strong></p>
+        <label><input type="radio" name="silaba1"> CADEIRA</label>
+        <label><input type="radio" name="silaba1"> CADERNO</label>
+        <label><input type="radio" name="silaba1"> CAVALO</label>
+    </div>
+
+    <div class="card">
+        <p><strong>2. PI + PO + CA =</strong></p>
+        <label><input type="radio" name="silaba2"> PETECA</label>
+        <label><input type="radio" name="silaba2"> PIPOCA</label>
+        <label><input type="radio" name="silaba2"> PANELA</label>
+    </div>
+
+    <div class="card">
+        <p><strong>3. BO + NE + CA =</strong></p>
+        <label><input type="radio" name="silaba3"> BONECA</label>
+        <label><input type="radio" name="silaba3"> BICICLETA</label>
+        <label><input type="radio" name="silaba3"> BALEIA</label>
+    </div>
+
+    <h3>✏️ Complete com a sílaba que está faltando</h3>
+
+    <div class="card verde">
+        <p>4. BO + ____ = BOLA</p>
+        <input type="text" placeholder="Digite a sílaba">
+
+        <p>5. GA + ____ = GATO</p>
+        <input type="text" placeholder="Digite a sílaba">
+
+        <p>6. ____ + SA = CASA</p>
+        <input type="text" placeholder="Digite a sílaba">
+
+        <p>7. ____ + NE + CA = BONECA</p>
+        <input type="text" placeholder="Digite a sílaba">
+    </div>
+</section>
+
+<section id="escrita">
+    <h2>✏️ 3. Cantinho da escrita</h2>
+    <p>Agora é sua vez de escrever! Digite as respostas nos espaços.</p>
+
+    <div class="card roxo">
+        <h3>📝 Complete as palavras</h3>
+
+        <p>1. CACHOR____</p>
+        <input type="text" placeholder="Complete a palavra">
+
+        <p>2. ESC____LA</p>
+        <input type="text" placeholder="Complete a palavra">
+
+        <p>3. BORBO____TA</p>
+        <input type="text" placeholder="Complete a palavra">
+    </div>
+
+    <h3>🐶 Escolha a palavra correta</h3>
+
+    <div class="card">
+        <p><strong>4. Qual palavra está escrita corretamente?</strong></p>
+        <label><input type="radio" name="ortografia1"> CAZA</label>
+        <label><input type="radio" name="ortografia1"> CASA</label>
+        <label><input type="radio" name="ortografia1"> CASSA</label>
+    </div>
+
+    <div class="card">
+        <p><strong>5. Qual palavra está escrita corretamente?</strong></p>
+        <label><input type="radio" name="ortografia2"> XAPÉU</label>
+        <label><input type="radio" name="ortografia2"> CHAPÉU</label>
+        <label><input type="radio" name="ortografia2"> CHAPÊU</label>
+    </div>
+
+    <div class="card amarelo">
+        <h3>💬 Escreva uma frase</h3>
+        <p>Observe a palavra AMIZADE e crie uma frase com ela:</p>
+        <textarea rows="4" placeholder="Escreva sua frase aqui..."></textarea>
+    </div>
+</section>
+
+<section id="desafios">
+    <h2>🧩 4. Desafios divertidos</h2>
+
+    <div class="card azul">
+        <h3>🔎 Desafio 1 — Qual palavra começa com P?</h3>
+        <label><input type="radio" name="desafio1"> BOLA</label>
+        <label><input type="radio" name="desafio1"> PATO</label>
+        <label><input type="radio" name="desafio1"> CASA</label>
+    </div>
+
+    <div class="card verde">
+        <h3>🔠 Desafio 2 — Organize as letras</h3>
+        <p>Organize as letras A - S - C - A e descubra a palavra:</p>
+        <input type="text" placeholder="Escreva a palavra">
+    </div>
+
+    <div class="card amarelo">
+        <h3>🐱 Desafio 3 — Encontre a palavra diferente</h3>
+        <p>GATO - GATO - PATO - GATO</p>
+        <label><input type="radio" name="desafio3"> GATO</label>
+        <label><input type="radio" name="desafio3"> PATO</label>
+    </div>
+
+    <div class="card roxo">
+        <h3>🎵 Desafio 4 — Vamos rimar?</h3>
+        <p>Qual palavra combina com PÃO?</p>
+        <label><input type="radio" name="desafio4"> MÃO</label>
+        <label><input type="radio" name="desafio4"> CASA</label>
+        <label><input type="radio" name="desafio4"> BOLA</label>
+    </div>
+
+    <div class="card azul">
+        <h3>🐝 Desafio 5 — Complete a frase</h3>
+        <p>A abelha faz ______.</p>
+        <label><input type="radio" name="desafio5"> MEL</label>
+        <label><input type="radio" name="desafio5"> LEITE</label>
+        <label><input type="radio" name="desafio5"> SUCO</label>
+    </div>
+</section>
+
+<section id="historias">
+    <h2>🎨 5. Pequenos escritores</h2>
+    <p>Use sua imaginação para criar uma história!</p>
+
+    <div class="card amarelo">
+        <h3>🐦 Uma aventura especial!</h3>
+        <p>Imagine que um passarinho encontrou uma chave brilhante
+        no jardim. O que será que aconteceu depois?</p>
+    </div>
+
+    <div class="card roxo">
+        <p><strong>Nome da minha história:</strong></p>
+        <input type="text" placeholder="Dê um título à sua história">
+
+        <p><strong>Agora conte sua história:</strong></p>
+        <textarea rows="8" placeholder="Era uma vez..."></textarea>
+
+        <p>🖍️ Você também pode fazer um desenho da sua história no caderno!</p>
+    </div>
+</section>
+
+<section>
+    <h2>🏆 Minhas conquistas</h2>
+    <p>Marque as atividades que você conseguiu realizar:</p>
+
+    <div class="conquista">
+        <label><input type="checkbox"> Li uma historinha.</label>
+        <label><input type="checkbox"> Respondi perguntas sobre o texto.</label>
+        <label><input type="checkbox"> Formei palavras com sílabas.</label>
+        <label><input type="checkbox"> Treinei minha escrita.</label>
+        <label><input type="checkbox"> Criei minha própria história.</label>
+    </div>
+
+    <div class="card amarelo" style="text-align:center; margin-top:20px;">
+        <h3>🌟 PARABÉNS!</h3>
+        <p>Você está aprendendo cada dia mais. Continue assim!</p>
+        <p>🎉 Você é um pequeno campeão das palavras! 🎉</p>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <h3>🌈 Clube das Palavras</h3>
+    <p>Ler, escrever e aprender: uma aventura para todos!</p>
+    <a href="#inicio">⬆ Voltar ao começo</a>
+</footer>
+
+</body>
+</html>
